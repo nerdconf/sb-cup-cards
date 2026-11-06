@@ -1,0 +1,99 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Community Cup · community kit</title>
+<style>
+@font-face{font-family:Wide;src:url(a/Anybody-Italic-Variable.ttf);font-stretch:50% 150%;font-weight:100 900}
+@font-face{font-family:Mono;src:url(a/PaperMono-Medium.ttf)}
+:root{--ink:#080b0d;--ink2:#101316;--ink3:#191d21;--paper:#ead9c8;--bone:#eee5d3;--red:#e20b1b;--yellow:#ffe62b;--edge:rgba(238,229,211,.22)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink) url(a/paper-tile.webp);background-blend-mode:multiply;color:var(--bone);font:500 15px/1.55 Mono,ui-monospace,Menlo,monospace;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:18px 0}.top img{height:26px}.live{font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.8}.live:before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#8be9ed;margin-right:8px}
+.hero{position:relative;border:2px solid var(--ink3);box-shadow:10px 10px 0 var(--red);background:#000 url(a/hero.jpg) center/cover;min-height:340px;display:flex;align-items:flex-end;margin:6px 0 34px}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,11,13,.15),rgba(8,11,13,.92) 70%)}
+.hero-in{position:relative;padding:26px 22px}
+h1,h2{font-family:Wide,"Arial Black",sans-serif;font-stretch:150%;font-weight:900;font-style:italic;text-transform:uppercase;line-height:.95;margin:0}
+h1{font-size:clamp(30px,7vw,58px)}h1 em{font-style:italic;background:var(--yellow);color:var(--ink);padding:0 .15em;box-shadow:4px 4px 0 var(--red)}
+.lede{max-width:640px;margin:14px 0 0;color:var(--bone)}
+.ctx{background:var(--paper);color:var(--ink);padding:18px 20px;box-shadow:8px 8px 0 var(--red);margin:0 0 30px}
+.ctx h3{margin:0 0 8px;font:900 13px Mono;letter-spacing:.12em;text-transform:uppercase}.ctx p{margin:6px 0}
+.nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 34px}.nav a{color:var(--bone);text-decoration:none;border:1px solid var(--edge);padding:6px 10px;font-size:13px}.nav a:hover{border-color:var(--yellow);color:var(--yellow)}
+.comm{border-top:2px solid var(--red);padding:26px 0 40px}
+.comm-h{display:flex;gap:14px;align-items:flex-start}.num{font:900 14px Mono;color:var(--yellow);padding-top:6px}
+h2{font-size:clamp(24px,5vw,38px)}.meta{margin:6px 0 0;opacity:.85}
+.tape{display:inline-block;margin-left:10px;vertical-align:middle;background:var(--yellow);color:var(--ink);font:900 12px Mono;font-style:normal;letter-spacing:.1em;padding:4px 8px;transform:rotate(-2deg)}
+.steps{margin:18px 0;padding-left:20px}.steps li{margin:4px 0}.steps b{color:var(--yellow);font-weight:500}
+.cards{display:grid;grid-template-columns:1.6fr 1fr;gap:14px;align-items:start}
+.card{display:block;background:var(--ink2);border:1px solid var(--edge);text-decoration:none;color:var(--bone)}.card img{display:block;width:100%;height:auto}.card span{display:block;padding:7px 10px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.8}
+.msg{margin:18px 0 0;background:var(--ink2);border:1px solid var(--edge)}
+.msg-h{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;border-bottom:1px solid var(--edge);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+pre{margin:0;padding:14px;white-space:pre-wrap;word-wrap:break-word;font:14px/1.5 Mono,monospace;max-height:340px;overflow:auto}
+.btn{font:900 13px Mono;letter-spacing:.06em;text-transform:uppercase;background:var(--yellow);color:var(--ink);border:0;padding:10px 14px;cursor:pointer;box-shadow:4px 4px 0 var(--red);text-decoration:none;display:inline-block}
+.btn.ghost{background:transparent;color:var(--bone);border:1px solid var(--bone);box-shadow:none}.btn.ok{background:#8be9ed}
+.links{margin-top:16px}.note{font-size:13px;opacity:.8}
+footer{padding:30px 0 50px;font-size:12px;opacity:.7}
+@media (max-width:560px){h1{font-size:26px}.top img{height:20px}.live{font-size:10px;letter-spacing:.06em}.hero-in{padding:20px 16px}.cards{grid-template-columns:1fr 1fr}.hero{min-height:300px;box-shadow:6px 6px 0 var(--red)}.msg-h{flex-direction:column;align-items:flex-start}}
+</style></head><body><div class="wrap"><div class="top"><img src="a/logo-horizontal.webp" alt="Stranger Builds"><span class="live">Community Cup · 5 Nov, 07:37 UTC</span></div>
+<div class="hero"><div class="hero-in"><h1>Your community.<br><em>Finish &amp; Submit.</em></h1><p class="lede">Square and story cards, with copy to share with your community.</p></div></div>
+<div class="ctx"><h3>Community Cup · 5 Nov, 07:37 UTC</h3><p>#1 MLAI: 15 submitted projects; #2 Crewbase Collective: 2 submitted projects; #3 Cerebral Valley: 2 submitted projects; #4 Bond AI: 1 submitted projects; #4 Build Club: 1 submitted projects; #4 Get on Board: 1 submitted projects.</p><p>Whoever submits: check your community in your profile.</p><p>Submit by Sun 8 Nov · 23:59 Argentina time.</p><p>Each project counts once, for the community of whoever submits it.</p><p>Standings are a dated snapshot. They do not award prizes.</p><p><a href="https://strangerbuilds.com/rules">Full rules</a> · <a href="world/cup-top3.json">Dated standings JSON</a></p></div><nav class="nav"><a href="#mlai">MLAI</a><a href="#cerebral-valley">Cerebral Valley</a><a href="#women-in-ai">Women in AI</a><a href="#crewbase-collective">Crewbase Collective</a><a href="#build-club">Build Club</a></nav><section class="comm" id="mlai"><header class="comm-h"><span class="num">01</span><div><h2>MLAI</h2><p class="meta">Community Cup · 5 Nov, 07:37 UTC</p></div></header><div class="cards"><a class="card" href="cards/mlai-square.png" download><img src="cards/mlai-square.png" alt="MLAI · square"><span>Square · feed</span></a><a class="card" href="cards/mlai-story.png" download><img src="cards/mlai-story.png" alt="MLAI · story"><span>Story</span></a></div><div class="msg"><div class="msg-h"><span>Copy to share</span><button class="btn copy" data-t="m1">Copy text</button></div><pre id="m1">MLAI · 15 submitted projects
+Community Cup · 5 Nov, 07:37 UTC
+
+Finish your project. Press Submit.
+Whoever submits: check your community in your profile.
+Submit by Sun 8 Nov · 23:59 Argentina time.
+Each project counts once, for the community of whoever submits it.
+
+https://app.strangerbuilds.com/community/mlai</pre></div><div class="links"><a class="btn ghost" href="https://app.strangerbuilds.com/community/mlai">Community page ↗</a></div></section><section class="comm" id="cerebral-valley"><header class="comm-h"><span class="num">02</span><div><h2>Cerebral Valley</h2><p class="meta">Community Cup · 5 Nov, 07:37 UTC</p></div></header><div class="cards"><a class="card" href="cards/cerebral-valley-square.png" download><img src="cards/cerebral-valley-square.png" alt="Cerebral Valley · square"><span>Square · feed</span></a><a class="card" href="cards/cerebral-valley-story.png" download><img src="cards/cerebral-valley-story.png" alt="Cerebral Valley · story"><span>Story</span></a></div><div class="msg"><div class="msg-h"><span>Copy to share</span><button class="btn copy" data-t="m2">Copy text</button></div><pre id="m2">Cerebral Valley · 2 submitted projects
+Community Cup · 5 Nov, 07:37 UTC
+
+Finish your project. Press Submit.
+Whoever submits: check your community in your profile.
+Submit by Sun 8 Nov · 23:59 Argentina time.
+Each project counts once, for the community of whoever submits it.
+
+https://app.strangerbuilds.com/community/cerebral-valley</pre></div><div class="links"><a class="btn ghost" href="https://app.strangerbuilds.com/community/cerebral-valley">Community page ↗</a></div></section><section class="comm" id="women-in-ai"><header class="comm-h"><span class="num">03</span><div><h2>Women in AI</h2><p class="meta">Community Cup · 5 Nov, 07:37 UTC</p></div></header><div class="cards"><a class="card" href="cards/women-in-ai-square.png" download><img src="cards/women-in-ai-square.png" alt="Women in AI · square"><span>Square · feed</span></a><a class="card" href="cards/women-in-ai-story.png" download><img src="cards/women-in-ai-story.png" alt="Women in AI · story"><span>Story</span></a></div><div class="msg"><div class="msg-h"><span>Copy to share</span><button class="btn copy" data-t="m3">Copy text</button></div><pre id="m3">Women in AI · 0 submitted projects
+Community Cup · 5 Nov, 07:37 UTC
+
+Finish your project. Press Submit.
+Whoever submits: check your community in your profile.
+Submit by Sun 8 Nov · 23:59 Argentina time.
+Each project counts once, for the community of whoever submits it.
+
+https://app.strangerbuilds.com/community/women-in-ai</pre></div><div class="links"><a class="btn ghost" href="https://app.strangerbuilds.com/community/women-in-ai">Community page ↗</a></div></section><section class="comm" id="crewbase-collective"><header class="comm-h"><span class="num">04</span><div><h2>Crewbase Collective</h2><p class="meta">Community Cup · 5 Nov, 07:37 UTC</p></div></header><div class="cards"><a class="card" href="cards/crewbase-collective-square.png" download><img src="cards/crewbase-collective-square.png" alt="Crewbase Collective · square"><span>Square · feed</span></a><a class="card" href="cards/crewbase-collective-story.png" download><img src="cards/crewbase-collective-story.png" alt="Crewbase Collective · story"><span>Story</span></a></div><div class="msg"><div class="msg-h"><span>Copy to share</span><button class="btn copy" data-t="m4">Copy text</button></div><pre id="m4">Crewbase Collective · 2 submitted projects
+Community Cup · 5 Nov, 07:37 UTC
+
+Finish your project. Press Submit.
+Whoever submits: check your community in your profile.
+Submit by Sun 8 Nov · 23:59 Argentina time.
+Each project counts once, for the community of whoever submits it.
+
+https://app.strangerbuilds.com/community/crewbase-collective</pre></div><div class="links"><a class="btn ghost" href="https://app.strangerbuilds.com/community/crewbase-collective">Community page ↗</a></div></section><section class="comm" id="build-club"><header class="comm-h"><span class="num">05</span><div><h2>Build Club</h2><p class="meta">Community Cup · 5 Nov, 07:37 UTC</p></div></header><div class="cards"><a class="card" href="cards/build-club-square.png" download><img src="cards/build-club-square.png" alt="Build Club · square"><span>Square · feed</span></a><a class="card" href="cards/build-club-story.png" download><img src="cards/build-club-story.png" alt="Build Club · story"><span>Story</span></a></div><div class="msg"><div class="msg-h"><span>Copy to share</span><button class="btn copy" data-t="m5">Copy text</button></div><pre id="m5">Build Club · 1 submitted project
+Community Cup · 5 Nov, 07:37 UTC
+
+Finish your project. Press Submit.
+Whoever submits: check your community in your profile.
+Submit by Sun 8 Nov · 23:59 Argentina time.
+Each project counts once, for the community of whoever submits it.
+
+https://app.strangerbuilds.com/community/build-club</pre></div><div class="links"><a class="btn ghost" href="https://app.strangerbuilds.com/community/build-club">Community page ↗</a></div></section><section class="comm" id="localhost"><h2>localhost</h2><div class="msg"><div class="msg-h">Copy to share</div><pre>Finish your project. Press Submit.
+Whoever submits: check your community in your profile.
+Submit by Sun 8 Nov · 23:59 Argentina time.
+Each project counts once, for the community of whoever submits it.
+Full rules: https://strangerbuilds.com/rules</pre></div></section><section class="comm" id="startuphaus-techhaus"><h2>StartupHaus / TechHaus</h2><div class="msg"><div class="msg-h">Copy to share</div><pre>Finish your project. Press Submit.
+Whoever submits: check your community in your profile.
+Submit by Sun 8 Nov · 23:59 Argentina time.
+Each project counts once, for the community of whoever submits it.
+Full rules: https://strangerbuilds.com/rules</pre></div></section><section class="comm" id="talentlabs"><h2>TalentLabs</h2><div class="msg"><div class="msg-h">Copy to share</div><pre>Finish your project. Press Submit.
+Whoever submits: check your community in your profile.
+Submit by Sun 8 Nov · 23:59 Argentina time.
+Each project counts once, for the community of whoever submits it.
+Full rules: https://strangerbuilds.com/rules</pre></div></section><section class="comm" id="ai-weekends"><h2>AI Weekends</h2><div class="msg"><div class="msg-h">Copy to share</div><pre>Finish your project. Press Submit.
+Whoever submits: check your community in your profile.
+Submit by Sun 8 Nov · 23:59 Argentina time.
+Each project counts once, for the community of whoever submits it.
+Full rules: https://strangerbuilds.com/rules</pre></div></section><section class="comm" id="adal"><h2>AdaL</h2><div class="msg"><div class="msg-h">Copy to share</div><pre>Finish your project. Press Submit.
+Whoever submits: check your community in your profile.
+Submit by Sun 8 Nov · 23:59 Argentina time.
+Each project counts once, for the community of whoever submits it.
+Full rules: https://strangerbuilds.com/rules</pre></div></section><footer>A NERDCONF event · Community Cup</footer></div><script>
+document.querySelectorAll('button.copy').forEach(b=>b.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(document.getElementById(b.dataset.t).textContent);b.textContent='Copied'}catch{b.textContent='Select the text to copy'}}));
+</script></body></html>

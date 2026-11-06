@@ -1,0 +1,213 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Community Cup card v2</title>
+<style>
+  @font-face { font-family: "Anybody"; src: url("../../assets/Anybody-Italic-Variable.ttf"); font-style: italic; font-weight: 100 900; font-stretch: 50% 150%; }
+  @font-face { font-family: "Roboto"; src: url("../../assets/Roboto-Variable.ttf"); font-weight: 100 900; }
+  @font-face { font-family: "Paper Mono"; src: url("../../assets/PaperMono-Medium.ttf"); font-weight: 500; }
+  :root { --bg: #080b0d; --fg: #eae2d4; --muted: #a8a59c; --strong: #3a434a; --paper: #eae2d4; --ink: #080b0d; --yellow: #ffe62b; --red: #e20b1b; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  [hidden] { display: none !important; }
+  html, body { background: var(--bg); }
+  .card { position: relative; width: 1080px; height: 1080px; overflow: hidden; color: var(--fg); font-family: Roboto, sans-serif;
+    background: var(--bg) url("../../assets/paper-tile.webp") repeat; display: flex; flex-direction: column; padding: 0 56px; }
+  .card.story { height: 1920px; padding: 0 64px; }
+  .display { font-family: Anybody, "Arial Black", sans-serif; font-weight: 900; font-style: italic; text-transform: uppercase; }
+  .mono { font-family: "Paper Mono", monospace; text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* brand row */
+  .top { display: flex; justify-content: space-between; align-items: center; flex: none; height: 104px; }
+  .story .top { height: 130px; margin-top: 70px; } /* below the story app's own header */
+  .top img { height: 40px; display: block; }
+  .story .top img { height: 54px; }
+  .top .by { font-size: 20px; color: var(--muted); }
+  .story .top .by { font-size: 26px; }
+
+  /* the one message */
+  .msg { flex: none; display: grid; grid-template-columns: 1fr 300px; gap: 36px; align-items: stretch; }
+  .story .msg { grid-template-columns: 1fr; gap: 44px; }
+  .photo { position: relative; border: 4px solid var(--ink); box-shadow: 12px 12px 0 0 var(--red); background-size: cover; background-position: center; min-height: 300px; }
+  .story .photo { height: 400px; order: -1; }
+  .logo { position: absolute; left: -14px; bottom: -18px; background: var(--paper); border: 3px solid var(--ink); box-shadow: 6px 6px 0 0 var(--red); padding: 10px 14px; transform: rotate(-2deg); display: flex; align-items: center; }
+  .logo img { height: 56px; max-width: 220px; object-fit: contain; display: block; }
+  .story .logo { left: 28px; bottom: -26px; padding: 14px 20px; }
+  .story .logo img { height: 84px; max-width: 360px; }
+  .words { display: flex; flex-direction: column; justify-content: center; gap: 14px; min-width: 0; }
+  .kicker { font-size: 24px; color: var(--yellow); }
+  .story .kicker { font-size: 32px; }
+  h1 { line-height: .92; font-variation-settings: "wdth" 120; }
+  h1 .name { display: block; font-size: 112px; letter-spacing: -1px; overflow-wrap: anywhere; }
+  h1 .is { display: flex; align-items: center; gap: 22px; margin-top: 12px; font-size: 112px; }
+  h1 .stamp { display: inline-block; background: var(--yellow); color: var(--ink); padding: 4px 22px 0; transform: rotate(-2deg); box-shadow: 8px 8px 0 0 var(--red); font-size: 1.3em; line-height: 1; }
+  h1.row { display: flex; flex-wrap: wrap; align-items: center; column-gap: 30px; }
+  h1.row .name { display: inline-block; }
+  h1.row .is { margin-top: 0; }
+  h1.row .stamp { font-size: 1.12em; }
+  h1 .sub { display: block; margin-top: 18px; font-size: 52px; }
+  .story h1 .name, .story h1 .is { font-size: 140px; }
+  .zero h1 .stamp { font-size: 1em; padding: 6px 18px 2px; }
+  .story h1 .sub { font-size: 70px; }
+
+  /* the prize */
+  .prize { flex: none; margin-top: 34px; font-size: 46px; line-height: 1.05; font-variation-settings: "wdth" 110; }
+  .prize b { color: var(--yellow); font-weight: 900; white-space: nowrap; }
+  .story .prize { margin-top: 56px; font-size: 62px; }
+
+  /* the call to action */
+  .cta { flex: none; margin-top: auto; margin-bottom: 52px; border: 4px solid var(--ink); background: var(--paper); color: var(--ink); box-shadow: 14px 14px 0 0 var(--red); padding: 28px 34px 30px; display: flex; flex-direction: column; gap: 16px; }
+  .story .cta { margin-bottom: 0; padding: 44px 44px 44px; gap: 26px; }
+  .step { display: grid; grid-template-columns: 62px 1fr; gap: 18px; align-items: center; }
+  .story .step { grid-template-columns: 86px 1fr; gap: 24px; }
+  .step .n { width: 62px; height: 62px; display: grid; place-items: center; background: var(--red); color: #fff; font-size: 38px; }
+  .story .step .n { width: 86px; height: 86px; font-size: 54px; }
+  .step .t { font-size: 44px; line-height: 1.02; font-variation-settings: "wdth" 100; }
+  .story .step .t { font-size: 54px; }
+  .step mark { background: var(--yellow); color: var(--ink); padding: 0 8px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  .link { margin-top: 6px; background: var(--ink); color: var(--fg); padding: 14px 20px 16px; display: flex; flex-direction: column; }
+  .story .link { margin-top: 10px; padding: 22px 28px 24px; }
+  .link .go { font-size: 18px; color: var(--yellow); margin-bottom: 6px; }
+  .story .link .go { font-size: 24px; margin-bottom: 10px; }
+  .link .u { font-family: Roboto, sans-serif; font-weight: 700; font-size: 44px; line-height: 1.1; white-space: nowrap; letter-spacing: -0.5px; }
+  .story .link .u { font-size: 58px; }
+  .link .u span { display: block; }
+  .link .u .path { color: var(--yellow); }
+
+  .foot { flex: none; display: none; }
+  .story .foot { display: block; margin: 44px 0 0; font-size: 28px; line-height: 1.35; color: var(--muted); }
+  .story .spacer { flex: 1; }
+  .story .tail { height: 150px; flex: none; } /* the story app's reply bar */
+
+/* Preserve v2 composition and assets; fit the new dated count and complete submitter rule. */
+.kicker {font-size:19px;letter-spacing:0;white-space:nowrap}
+.story .kicker {font-size:26px}
+h1 .name {font-size:82px}
+h1 .is {font-size:70px}
+h1 .sub {font-size:34px;line-height:1.05;margin-top:14px}
+.story h1 .name {font-size:112px}
+.story h1 .is {font-size:100px}
+.story h1 .sub {font-size:50px}
+.prize {font-size:42px;margin-top:28px}
+.story .prize {font-size:52px;margin-top:32px}
+.step .t {font-size:32px;line-height:1.1}
+.story .step .t {font-size:44px}
+.count-rule {font:23px/1.25 Roboto,sans-serif}
+.story .count-rule {font-size:30px}
+.link .u {font-size:36px}
+.story .link .u {font-size:48px}
+.story .foot {margin-top:28px;font-size:24px}
+.story .cta {padding:38px;gap:22px}
+.story .msg {gap:32px}
+.spacer {min-height:24px}
+</style>
+</head>
+<body>
+<div id="card" class="card">
+  <div class="top"><img src="../../assets/logo-horizontal.webp" alt="Stranger Builds"><span class="by mono">A NERDCONF event</span></div>
+  <section class="msg">
+    <div class="words">
+      <span class="kicker mono">Community Cup · 5 Nov, 07:37 UTC</span>
+      <h1 class="display" id="h1"></h1>
+    </div>
+    <div class="photo" id="photo"><span class="logo" id="logo" hidden><img id="logoImg" alt=""></span></div>
+  </section>
+  <p class="prize display" id="prize"></p>
+  <div class="spacer"></div>
+  <div class="cta" id="cta">
+    <div class="step"><span class="n display">1</span><span class="t display" id="s1"></span></div>
+    <div class="step"><span class="n display">2</span><span class="t display" id="s2">Submit your project <span style="white-space:nowrap">by Sun 8 Nov</span></span></div>
+    <p class="count-rule">Each project counts once, for the community of whoever submits it.</p><div class="link" id="link"><span class="go mono">Open</span><span class="u" id="url"></span></div>
+  </div>
+  <p class="foot mono" id="foot">Closes Sun 8 Nov · 23:59 Argentina time</p>
+  <div class="tail"></div>
+</div>
+<script>
+  const q = new URLSearchParams(location.search);
+  const format = q.get("format") === "story" ? "story" : "square";
+  const D = {"slug": "crewbase-collective", "label": "Crewbase Collective", "submitted": 2, "logo": "", "public": true};
+  const $ = (id) => document.getElementById(id);
+  const card = $("card");
+  card.classList.add(format);
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+
+  // photo: people building, in its own band
+  $("photo").style.backgroundImage = `url(../../assets/${format === "story" ? "blr-01705" : "sf-10"}.jpg)`;
+  if (format === "square") $("photo").style.backgroundPosition = "38% center";
+  if (D.logo) { $("logoImg").src = `../../assets/logos/${D.logo}`; $("logo").hidden = false; }
+
+  // Dated submitted-project counts from the public Cup table.
+  const h1 = $("h1");
+  h1.append(el("span", "name", D.label));
+  const is = el("span", "is");
+  is.append(el("span", "stamp", String(D.submitted)));
+  h1.append(is, el("span", "sub", D.submitted === 1 ? "submitted project" : "submitted projects"));
+  $("prize").textContent = "Finish your project. Press Submit.";
+  $("s1").textContent = "Whoever submits: check your community in your profile.";
+  $("s2").textContent = "Submit by Sun 8 Nov · 23:59 Argentina time.";
+  const u = $("url");
+  u.append(el("span", "", "app.strangerbuilds.com"), el("span", "path", `/community/${D.slug}`));
+
+  // fit: shrink a block's font until it fits its box (never below a floor)
+  const fs = (e) => parseFloat(getComputedStyle(e).fontSize);
+  function shrink(e, ok, floor) { let f = fs(e); while (!ok() && f > floor) { f -= 2; e.style.fontSize = f + "px"; } return f; }
+  function fit() {
+    const warn = [];
+    const words = document.querySelector(".words");
+    const name = h1.querySelector(".name"), is = h1.querySelector(".is"), sub = h1.querySelector(".sub");
+    const W = () => words.clientWidth + 1;
+    const lines = (e, k, lh) => e.getBoundingClientRect().height <= fs(e) * lh * k + 6;
+    // 1. widths: the name on at most two lines and never split inside a word; the place line on one line
+    const nameOk = () => name.scrollWidth <= W() && lines(name, 2, 0.92) && !wordsBroken(name);
+    shrink(name, nameOk, 40);
+    // short names: the name and its place on one line ("MLAI IS #1")
+    if (D.rank && lines(name, 1, 0.92)) {
+      h1.classList.add("row");
+      if (h1.getBoundingClientRect().height > fs(is) * 1.6 + 8) h1.classList.remove("row");
+    }
+    shrink(is, () => is.scrollWidth <= W() && lines(is, 1, 1.4), 40);
+    if (sub) shrink(sub, () => sub.scrollWidth <= W() && lines(sub, 2, 1.05), 26);
+    for (const t of document.querySelectorAll(".step .t")) shrink(t, () => lines(t, D.other && t.id === "s1" ? 3 : 2, 1.02), 26);
+    const link = $("link");
+    const urlOk = () => u.scrollWidth <= link.clientWidth - 40;
+    if (!D.public) { u.classList.add("one"); u.style.display = "flex"; u.style.flexWrap = "nowrap"; }
+    shrink(u, urlOk, 26);
+    shrink($("prize"), () => lines($("prize"), 2, 1.05), 28);
+    // 2. height: shrink the message (and the story photo) until the card holds everything
+    const over = () => card.scrollHeight > card.clientHeight + 1;
+    let guard = 0;
+    const ph = $("photo");
+    while (over() && format === "story" && ph.offsetHeight > 300) ph.style.height = ph.offsetHeight - 8 + "px";
+    while (over() && guard++ < 120) {
+      for (const e of [name, is, sub].filter(Boolean)) if (fs(e) > 40) e.style.fontSize = fs(e) * 0.985 + "px";
+    }
+    if (over()) warn.push("card overflows");
+    if (fs(name) < 60) warn.push(`name small ${Math.round(fs(name))}`);
+    const prizeR = $("prize").getBoundingClientRect(), ctaR = $("cta").getBoundingClientRect();
+    if (prizeR.bottom > ctaR.top - 4) warn.push("prize touches cta");
+    document.body.dataset.fit = JSON.stringify({ name: Math.round(fs(name)), is: Math.round(fs(is)), step: Math.round(fs($("s1"))), url: Math.round(fs(u)), warn });
+  }
+  function wordsBroken(e) {
+    // true when a word was split across lines (overflow-wrap: anywhere) — compare each word's width to the box
+    const max = e.clientWidth;
+    const probe = el("span", "", ""); probe.style.cssText = "position:absolute;visibility:hidden;white-space:nowrap";
+    e.appendChild(probe);
+    let broken = false;
+    for (const w of D.label.split(/\s+/)) { probe.textContent = w; if (probe.offsetWidth > max) broken = true; }
+    probe.remove();
+    return broken;
+  }
+  document.fonts.ready.then(() => Promise.all([...document.images].filter(i=>i.getAttribute("src")).map(i=>i.decode()))).then(async () => {
+    const img=new Image(); img.src=`../../assets/${format === 'story' ? 'blr-01705' : 'sf-10'}.jpg`; await img.decode();
+    fit();
+    const result=JSON.parse(document.body.dataset.fit);
+    result.fonts=document.fonts.check('900 82px Anybody') && document.fonts.check('500 20px "Paper Mono"');
+    result.boxes=Object.fromEntries(['.msg','.prize','.cta','.count-rule','.foot','.tail'].map(s=>{const r=document.querySelector(s).getBoundingClientRect();return [s,{top:r.top,bottom:r.bottom,left:r.left,right:r.right,width:r.width,height:r.height}]}));
+    if(!result.fonts) result.warn.push('font unavailable');
+    document.body.dataset.fit=JSON.stringify(result);
+    document.body.dataset.ready='1';
+  }).catch(e=>document.body.dataset.error=e.message);
+</script>
+</body>
+</html>

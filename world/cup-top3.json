@@ -1,0 +1,25 @@
+{
+  "updated": "2026-11-05T07:37:32.015Z",
+  "source": "https://app.strangerbuilds.com/community/mlai",
+  "sourceType": "public Community Cup standings table",
+  "closes": "Sun 8 Nov · 23:59 Argentina time",
+  "deadline": "2026-11-08T23:59:00-03:00",
+  "tiePolicy": "Places and ties reproduced from the public table, including its live-link tie-break. This snapshot does not award prizes.",
+  "top": [
+    {
+      "place": 1,
+      "name": "MLAI",
+      "submitted": 15
+    },
+    {
+      "place": 2,
+      "name": "Crewbase Collective",
+      "submitted": 2
+    },
+    {
+      "place": 3,
+      "name": "Cerebral Valley",
+      "submitted": 2
+    }
+  ]
+}
